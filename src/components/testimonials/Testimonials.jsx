@@ -13,7 +13,7 @@ const Testimonials = () => {
     },
     {
       id: 2,
-      name: "Nodej Developer",
+      name: "Nodejs Developer",
       title: "3 Years of Experience",
       img: "https://miro.medium.com/v2/resize:fit:1000/1*TGwJKcxY8kGEenRLLedeLw.png",
       icon: "assets/youtube.png",
