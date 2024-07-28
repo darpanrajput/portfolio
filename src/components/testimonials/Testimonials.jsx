@@ -4,36 +4,49 @@ const Testimonials = () => {
   const data = [
     {
       id: 1,
-      name: "Tom Durden",
-      title: "Senior Developer",
-      img: "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      name: "React Developer",
+      title: "3 Years of Experience",
+      img: "https://cdn.vectorstock.com/i/1000v/78/57/react-icon-in-a-hexagon-vector-36587857.jpg",
       icon: "assets/twitter.png",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem.",
+      featured: true,
+      desc: "Experienced in building full-stack MERN applications for E-commerce. Implemented user authentication, order processing, and revenue display with React.",
     },
     {
       id: 2,
-      name: "Alex Kalinski",
-      title: "Co-Founder of DELKA",
-      img: "https://images.pexels.com/photos/428321/pexels-photo-428321.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      name: "Nodej Developer",
+      title: "3 Years of Experience",
+      img: "https://miro.medium.com/v2/resize:fit:1000/1*TGwJKcxY8kGEenRLLedeLw.png",
       icon: "assets/youtube.png",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem recusandae perspiciatis ducimus vel hic temporibus. ",
+      desc: "Developed backend server using NodeJs with authentication protection.Integrated technologies such as AWS Docker, Express, and Postgres Prisma. ",
       featured: true,
     },
     {
       id: 3,
-      name: "Martin Harold",
-      title: "CEO of ALBI",
-      img: "https://images.pexels.com/photos/3863793/pexels-photo-3863793.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      name: "Mongodb",
+      title: "3 Years of Experience",
+      img: "https://i0.wp.com/ahex.co/wp-content/uploads/2022/06/mongodb-logo.png",
+      featured: true,
+
       icon: "assets/linkedin.png",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem",
+      desc: "Utilized MongoDB for database management in E-commerce and Video Streaming projects, using CRUD queries and aggregation pipeline for data handling.",
+    },
+    {
+      id: 4,
+      name: "UI Desinger",
+      title: "2 Years of Experience",
+      img: "https://s3-alpha.figma.com/hub/file/2815952264/7a5ebfb0-0508-48ab-be9a-31b36ba53f97-cover.png",
+      icon: "assets/youtube.png",
+      featured: true,
+
+      desc: "UI designer with 2 years of experience in Figma, Adobe, and Canva, creating visually appealing and user-friendly interfaces for websites and applications",
     },
   ];
   return (
     <div className="testimonial" id="testimonial">
-      <h1>Testimonials</h1>
+      <h1>Skills & Experience</h1>
       <div className="container">
         {data.map((d) => (
-          <div className={d.featured ? "card featured" : "card"}>
+          <div key={d.id} className={d.featured ? "card featured" : "card"}>
             <div className="top">
               <img src="assets/right-arrow.png" className="left" alt="" />
               <img className="user" src={d.img} alt="" />

@@ -7,21 +7,24 @@ const Works = () => {
       id: "1",
       icon: "./assets/mobile.png",
       title: "Web Design",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      link: "https://github.com/darpanrajput/React-Social-Media-App",
+      desc: "As a freelancer, I offer web design services, creating visually appealing and user-friendly websites.",
       img: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
     },
     {
       id: "2",
       icon: "./assets/globe.png",
       title: "Mobile Application",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      link: "https://github.com/darpanrajput/veggiesAndroidApp",
+      desc: "I have Worked on Multiple Android Apps Using Java And Xml",
       img: "https://i.pinimg.com/originals/e9/c9/2f/e9c92f7869d682a6fa5a97fb8a298f30.jpg",
     },
     {
       id: "3",
       icon: "./assets/writing.png",
       title: "Branding",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      link: "https://darpanrajput.github.io/Tindog-HTML-Project/",
+      desc: "I also offer branding services, enhancing the visual identity and market presence of businesses.",
       img: "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
     },
   ];
@@ -37,9 +40,10 @@ const Works = () => {
     <div className="works" id="works">
       <div
         className="slider"
-        style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
+        style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
+      >
         {data.map((d) => (
-          <div className="container">
+          <div key={d.id} className="container">
             <div className="item">
               <div className="left">
                 <div className="leftContainer">
@@ -49,14 +53,23 @@ const Works = () => {
 
                   <h2>{d.title}</h2>
                   <p>{d.desc}</p>
-                  <span>Projects</span>
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const newWindow = window.open(
+                        d.link,
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
+                      if (newWindow) newWindow.opener = null;
+                    }}
+                  >
+                    Projects
+                  </span>
                 </div>
               </div>
               <div className="right">
-                <img
-                  src="https://cdn.dribbble.com/users/4684322/screenshots/17772465/media/3e5a90719bcdb0b34e98444a9d156a78.png?compress=1&resize=1200x900&vertical=top"
-                  alt=""
-                />
+                <img src={d.img} alt="" />
               </div>
             </div>
           </div>

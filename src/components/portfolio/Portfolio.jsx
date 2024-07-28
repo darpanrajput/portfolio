@@ -26,14 +26,14 @@ const Portfolio = () => {
       id: "mobile",
       title: "Mobile App",
     },
-    {
-      id: "design",
-      title: "Design",
-    },
-    {
-      id: "content",
-      title: "Content",
-    },
+    // {
+    //   id: "design",
+    //   title: "Design",
+    // },
+    // {
+    //   id: "content",
+    //   title: "Content",
+    // },
   ];
 
   useEffect(() => {
@@ -47,14 +47,14 @@ const Portfolio = () => {
       case "mobile":
         setData(mobilePortfolio);
         break;
-      case "design":
-        setData(designPortfolio);
-        break;
-      case "content":
-        setData(contentPortfolio);
-        break;
-      default:
-        setData(featuredPortfolio);
+      // case "design":
+      //   // setData(designPortfolio);
+      //   break;
+      // case "content":
+      //   // setData(contentPortfolio);
+      //   break;
+      // default:
+      //   setData(featuredPortfolio);
     }
   }, [selected]);
   return (
@@ -63,6 +63,7 @@ const Portfolio = () => {
       <ul>
         {list.map((item) => (
           <PortfolioList
+            key={item.id}
             title={item.title}
             active={selected === item.id}
             setSelected={setSelected}
@@ -72,10 +73,23 @@ const Portfolio = () => {
       </ul>
       <div className="container">
         {data.map((d) => (
-          <div className="item">
-            <img src={d.img} alt="" />
-            <h3>{d.title}</h3>
-          </div>
+          <>
+            <div
+              className="item"
+              onClick={(e) => {
+                e.preventDefault();
+                const newWindow = window.open(
+                  d.link,
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+                if (newWindow) newWindow.opener = null;
+              }}
+            >
+              <img src={d.img} alt="" />
+              <h3>{d.title}</h3>
+            </div>
+          </>
         ))}
       </div>
     </div>

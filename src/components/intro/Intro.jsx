@@ -6,12 +6,12 @@ const Intro = () => {
   const textRef = useRef();
 
   useEffect(() => {
-    console.log(textRef.current);
+    // console.log(textRef.current);
     init(textRef.current, {
       showCursor: true,
       backDelay: 1500,
       backSpeed: 60,
-      strings: ["Developer", "Designer", "Programmer"],
+      strings: ["Software Engineer", "Developer", "Designer", "Programmer"],
     });
   }, []);
   return (
@@ -26,7 +26,7 @@ const Intro = () => {
           <h2>Hi There, I'm</h2>
           <h1>Darpan Rajput</h1>
           <h3>
-            Freelance <span ref={textRef}> </span>
+            I'm a <span ref={textRef}> </span>
           </h3>
         </div>
         <a href="#portfolio">
