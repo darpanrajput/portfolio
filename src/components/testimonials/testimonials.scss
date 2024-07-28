@@ -25,6 +25,7 @@
   @include mobile {
     flex-direction: column;
     height: 100%;
+    margin: 10px 0px;
   }
 
   .card {
@@ -49,7 +50,7 @@
       @include mobile {
         width: 250px;
         height: 180px;
-        margin: 1px;
+        margin: 5px;
       }
     }
 

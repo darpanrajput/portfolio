@@ -4,7 +4,6 @@ import { init } from "ityped";
 
 const Intro = () => {
   const textRef = useRef();
-
   useEffect(() => {
     // console.log(textRef.current);
     init(textRef.current, {

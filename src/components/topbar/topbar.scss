@@ -24,6 +24,9 @@
         text-decoration: none;
         margin-right: 40px;
         color: inherit;
+        @include mobile {
+          font-size: 30px;
+        }
       }
       .item-Container {
         display: flex;
